@@ -1,12 +1,13 @@
-from flask import Flask, request, jsonify
 import pickle
-import xgboost as xgb
+
 import pandas as pd
+import xgboost as xgb
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
 # Load the trained XGBoost model
-MODEL_PATH = r"C:\Life Projects\nasa space app challenge\Solar Energy Prediction\bst_model.pck"
+MODEL_PATH = r"./bst_model.pck"
 bst_model = pickle.load(open(MODEL_PATH, "rb"))
 
 # Maximum value to convert the normalized output
