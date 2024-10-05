@@ -6,4 +6,3 @@ pandas
 numpy
 python-dateutil
 pytz
-sklearn
