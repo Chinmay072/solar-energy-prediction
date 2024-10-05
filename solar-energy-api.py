@@ -1,3 +1,4 @@
+import os
 import pickle
 
 import pandas as pd
@@ -12,6 +13,9 @@ bst_model = pickle.load(open(MODEL_PATH, "rb"))
 
 # Maximum value to convert the normalized output
 MAX = 257622.0
+
+# Get port from environment variable or use default
+port = int(os.environ.get("PORT", 4000))
 
 # List of required features
 required_features = ['AirTemp', 'Azimuth', 'CloudOpacity', 'DewpointTemp', 'Dhi', 'Dni', 'Ebh', 'Ghi', 
@@ -53,4 +57,4 @@ def predict_solar_energy():
     return jsonify(response), 200
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=port)
