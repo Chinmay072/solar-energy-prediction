@@ -37,7 +37,7 @@ MAX = 257622.0
 
 def test_model_2(user_input):
     # Load the trained model
-    bst = pickle.load(open(r"C:\Life Projects\nasa space app challenge\Solar Energy Prediction\bst_model.pck", "rb"))
+    bst = pickle.load(open(r"bst_model.pck", "rb"))
 
     # Define the correct feature order
     feature_order = ['AirTemp', 'Azimuth', 'CloudOpacity', 'DewpointTemp', 'Dhi', 'Dni', 'Ebh', 'Ghi', 
